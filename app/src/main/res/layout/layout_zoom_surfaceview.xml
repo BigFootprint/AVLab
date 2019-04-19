@@ -9,7 +9,7 @@
         android:layout_height="1000dp"
         android:background="#ff0000">
 
-        <com.footprint.avlab.teclab.surfaceviewzoom.TestSurfaceView
+        <com.footprint.avlab.teclab.surfaceview.zoom.TestSurfaceView
             android:id="@+id/surfaceview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

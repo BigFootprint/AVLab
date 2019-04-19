@@ -41,6 +41,38 @@
                     android:scheme="@string/scheme" />
             </intent-filter>
         </activity>
+
+        <!-- SurfaceView -->
+        <activity
+            android:name=".teclab.surfaceview.SurfaceMainActivity"
+            android:launchMode="singleTask">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="sv"
+                    android:scheme="@string/scheme" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".teclab.surfaceview.zoom.ZoomSurfaceViewActivity"
+            android:launchMode="singleTask">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="svzoom"
+                    android:scheme="@string/scheme" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

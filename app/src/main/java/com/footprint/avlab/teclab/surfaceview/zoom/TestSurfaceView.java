@@ -1,4 +1,4 @@
-package com.footprint.avlab.teclab.surfaceviewzoom;
+package com.footprint.avlab.teclab.surfaceview.zoom;
 
 import android.content.Context;
 import android.util.AttributeSet;

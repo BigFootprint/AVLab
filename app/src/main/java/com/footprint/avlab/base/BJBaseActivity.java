@@ -11,6 +11,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import com.footprint.avlab.R;
 
 /**
  * Created by quanmin.li on 2019/4/19
@@ -29,8 +32,18 @@ public abstract class BJBaseActivity extends AppCompatActivity {
             setContentView(getLayoutId());
         }
 
+        addBg();
+
         initView();
         loadData();
+    }
+
+    private void addBg() {
+        ImageView imageView = new ImageView(this);
+        imageView.setImageResource(R.mipmap.app_logo);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setAlpha(0.2f);
+        ((ViewGroup) getWindow().getDecorView()).addView(imageView, 0);
     }
 
     @LayoutRes
