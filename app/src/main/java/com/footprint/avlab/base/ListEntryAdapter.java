@@ -1,4 +1,4 @@
-package com.footprint.avlab.main;
+package com.footprint.avlab.base;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -7,17 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.footprint.avlab.R;
-import com.footprint.avlab.base.BJBaseRVAdapter;
+import com.footprint.avlab.main.EntryModel;
 import com.footprint.avlab.utils.CollectionUtil;
 import java.util.List;
 
 /**
  * Created by quanmin.li on 2019/4/19
  */
-public class MainEntryAdapter extends BJBaseRVAdapter<MainEntryAdapter.MyViewHolder> {
+public class ListEntryAdapter extends BJBaseRVAdapter<ListEntryAdapter.MyViewHolder> {
     private List<EntryModel> entryModels;
 
-    public MainEntryAdapter(List<EntryModel> entryModels) {
+    public ListEntryAdapter(List<EntryModel> entryModels) {
         this.entryModels = entryModels;
     }
 

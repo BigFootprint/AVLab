@@ -32,20 +32,16 @@ public class TestSurfaceView extends SurfaceView implements SurfaceHolder.Callba
 
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-        // TODO Auto-generated method stub
-
     }
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        // TODO Auto-generated method stub
         myThread.isRun = true;
         myThread.start();
     }
 
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
-        // TODO Auto-generated method stub
         myThread.isRun = false;
     }
 }

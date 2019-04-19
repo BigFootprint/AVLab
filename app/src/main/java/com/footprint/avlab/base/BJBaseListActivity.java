@@ -6,7 +6,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import com.footprint.avlab.R;
 import com.footprint.avlab.main.EntryModel;
-import com.footprint.avlab.main.MainEntryAdapter;
 import java.util.List;
 
 /**
@@ -33,6 +32,7 @@ public abstract class BJBaseListActivity extends BJBaseActivity {
         super.initView();
         recyclerView = findViewById(R.id.rv_entry);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        recyclerView.addItemDecoration(new SimpleItemDecoration());
     }
 
     @Override
@@ -41,7 +41,7 @@ public abstract class BJBaseListActivity extends BJBaseActivity {
 
         entryModels = getEntryList();
 
-        BJBaseRVAdapter adapter = new MainEntryAdapter(getEntryList());
+        BJBaseRVAdapter adapter = new ListEntryAdapter(getEntryList());
         recyclerView.setAdapter(adapter);
         adapter.setOnItemClickListener(new BJBaseRVAdapter.OnItemClickListener() {
             @Override
