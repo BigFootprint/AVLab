@@ -27,9 +27,7 @@
                     android:scheme="@string/scheme" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".teclab.jni.JNIActivity"
-            android:launchMode="singleTask">
+        <activity android:name=".teclab.jni.JNIActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -44,9 +42,7 @@
         </activity>
 
         <!-- SurfaceView -->
-        <activity
-            android:name=".teclab.surfaceview.SurfaceMainActivity"
-            android:launchMode="singleTask">
+        <activity android:name=".teclab.surfaceview.SurfaceMainActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -59,9 +55,7 @@
                     android:scheme="@string/scheme" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".teclab.surfaceview.zoom.ZoomSurfaceViewActivity"
-            android:launchMode="singleTask">
+        <activity android:name=".teclab.surfaceview.zoom.ZoomSurfaceViewActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -71,6 +65,19 @@
 
                 <data
                     android:host="svzoom"
+                    android:scheme="@string/scheme" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".teclab.surfaceview.camera.CameraActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="svcamera"
                     android:scheme="@string/scheme" />
             </intent-filter>
         </activity>

@@ -46,7 +46,10 @@ public abstract class BJBaseListActivity extends BJBaseActivity {
         adapter.setOnItemClickListener(new BJBaseRVAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                startActivity(entryModels.get(position).getUrl());
+                Bundle bundle = new Bundle();
+                EntryModel model = entryModels.get(position);
+                bundle.putString(KEY_TITLE, model.getName());
+                startActivity(model.getUrl(), bundle);
             }
         });
     }

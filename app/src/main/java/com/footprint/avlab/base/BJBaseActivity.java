@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -20,6 +21,8 @@ import com.footprint.avlab.R;
  */
 public abstract class BJBaseActivity extends AppCompatActivity {
     private static final String TAG = "BJBaseActivity";
+
+    public static String KEY_TITLE = "intent_key_activity_title";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,18 +35,42 @@ public abstract class BJBaseActivity extends AppCompatActivity {
             setContentView(getLayoutId());
         }
 
+        // 基础 UI 设置
         addBg();
+
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            if (showBackButton()) {
+                actionBar.setHomeButtonEnabled(true);
+                actionBar.setDisplayHomeAsUpEnabled(true);
+            }
+
+            Intent intent = getIntent();
+            if (intent != null) {
+                String title = intent.getStringExtra(KEY_TITLE);
+                if (!TextUtils.isEmpty(title)) {
+                    actionBar.setTitle(title);
+                }
+            }
+        }
 
         initView();
         loadData();
     }
 
+    /**
+     * 添加背景图片
+     */
     private void addBg() {
         ImageView imageView = new ImageView(this);
         imageView.setImageResource(R.mipmap.app_logo);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setAlpha(0.2f);
         ((ViewGroup) getWindow().getDecorView()).addView(imageView, 0);
+    }
+
+    protected boolean showBackButton() {
+        return true;
     }
 
     @LayoutRes
@@ -53,6 +80,16 @@ public abstract class BJBaseActivity extends AppCompatActivity {
     }
 
     protected void loadData() {
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish(); // back button
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     /**

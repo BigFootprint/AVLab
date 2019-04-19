@@ -24,7 +24,7 @@ public class ZoomSurfaceViewActivity extends BJBaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.layout_zoom_surfaceview;
+        return R.layout.activity_zoom_surfaceview;
     }
 
     @Override
