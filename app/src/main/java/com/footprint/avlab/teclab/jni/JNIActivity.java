@@ -1,11 +1,12 @@
-package com.footprint.avlab;
+package com.footprint.avlab.teclab.jni;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import com.footprint.avlab.teclab.jni.Mp3Endocder;
+import com.footprint.avlab.base.BJBaseActivity;
 
-public class MainActivity extends AppCompatActivity {
-
+/**
+ * Created by quanmin.li on 2019/4/19
+ */
+public class JNIActivity extends BJBaseActivity {
     static {
         System.loadLibrary("audioencoder");
     }
@@ -13,9 +14,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         Mp3Endocder endocder = new Mp3Endocder();
         endocder.encode();
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return 0;
     }
 }

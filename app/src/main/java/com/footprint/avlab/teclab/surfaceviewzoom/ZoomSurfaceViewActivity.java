@@ -1,7 +1,6 @@
 package com.footprint.avlab.teclab.surfaceviewzoom;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.SurfaceView;
 import android.view.View;
@@ -9,19 +8,29 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import com.footprint.avlab.R;
+import com.footprint.avlab.base.BJBaseActivity;
 
-public class ZoomSurfaceViewActivity extends AppCompatActivity {
+public class ZoomSurfaceViewActivity extends BJBaseActivity {
     private static final String TAG = "ZoomSurfaceViewActivity";
 
     private Button btnZoom;
     private SurfaceView surfaceView;
     private ViewGroup surfaceContainer;
 
-    /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_zoom_surfaceview);
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.layout_zoom_surfaceview;
+    }
+
+    @Override
+    protected void initView() {
+        super.initView();
+
         surfaceContainer = findViewById(R.id.surface_holder);
 
         surfaceView = findViewById(R.id.surfaceview);
